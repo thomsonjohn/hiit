@@ -3,9 +3,9 @@ import { IStyle } from 'fela'
 import { Theme } from '../../Theme'
 
 interface Style {
-  header: IStyle
+  active: IStyle
+  navBar: IStyle
   link: object
-  title: object
 }
 
 interface StyleProps {
@@ -14,25 +14,23 @@ interface StyleProps {
 
 const makeStyles = ({ theme }: StyleProps): Style => {
   return {
-    header: {
-      alignContent: 'center',
+    active: {
+      borderBottom: `2px solid ${theme.color.secondary}`,
+    },
+    navBar: {
+      alignItems: 'center',
       display: 'flex',
-      padding: `${theme.spacing.normal} ${theme.spacing.xlarge}`,
-      justifyContent: 'space-between',
     },
     link: {
       color: theme.color.textOnPrimary,
       textDecoration: 'none',
+      padding: theme.spacing.normal,
       cursor: 'pointer',
-      ...theme.font.logo,
+      ...theme.font.button,
       ':hover': {
         color: theme.color.secondary,
       },
       transition: 'color ease-in 0.3s',
-    },
-    title: {
-      display: 'flex',
-      justifyContent: 'flex-start',
     },
   }
 }

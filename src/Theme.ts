@@ -5,6 +5,7 @@ interface Font {
   letterSpacing: string
   textTransform?: string
   lineHeight?: string
+  margin?: number
 }
 
 export interface Theme {
@@ -22,6 +23,8 @@ export interface Theme {
     error: string
   }
   font: {
+    hero: Font
+    logo: Font
     headline1: Font
     headline2: Font
     headline3: Font
@@ -61,6 +64,20 @@ export const theme: Theme = {
     error: '#b00020',
   },
   font: {
+    hero: {
+      fontFamily: 'Roboto, sans-serif',
+      fontWeight: 700,
+      fontSize: '7rem',
+      letterSpacing: '-0.094rem',
+      margin: 0,
+    },
+    logo: {
+      fontFamily: 'Roboto, sans-serif',
+      fontWeight: 700,
+      fontSize: '3.75rem',
+      letterSpacing: '-0.031rem',
+      margin: 0,
+    },
     headline1: {
       fontFamily: 'Roboto, sans-serif',
       fontWeight: 300,
@@ -84,6 +101,7 @@ export const theme: Theme = {
       fontWeight: 400,
       fontSize: '2.125rem',
       letterSpacing: '-0.016rem',
+      margin: 0,
     },
     headline5: {
       fontFamily: 'Roboto, sans-serif',

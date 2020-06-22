@@ -1,16 +1,27 @@
 import React from 'react'
-import './App.css'
+import { Router } from '@reach/router'
+import { useFela } from 'react-fela'
 
 import Header from './components/Header'
-import Figure from './components/Figure'
+import Landing from './views/Landing'
+import Moves from './views/Moves'
+import { Theme } from './Theme'
 
-function App() {
+import makeStyles from './App.styles'
+
+const App = (): JSX.Element => {
+  const { css, theme } = useFela<Theme>()
+  const styles = makeStyles({
+    theme,
+  })
+
   return (
-    <div className="App">
+    <div className={css(styles.app)}>
       <Header />
-      <div>
-        <Figure primary={['chest']} secondary={['triceps', 'shoulders']} />
-      </div>
+      <Router>
+        <Landing path="/" />
+        <Moves path="moves" />
+      </Router>
     </div>
   )
 }
