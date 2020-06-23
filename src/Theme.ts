@@ -10,6 +10,7 @@ interface Font {
 
 export interface Theme {
   color: {
+    dark: string
     primary: string
     primaryLight: string
     primaryDark: string
@@ -51,6 +52,7 @@ export interface Theme {
 
 export const theme: Theme = {
   color: {
+    dark: '#282c34',
     primary: '#263238',
     primaryLight: '#4f5b62',
     primaryDark: '#000a12',

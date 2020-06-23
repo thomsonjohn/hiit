@@ -16,9 +16,11 @@ const makeStyles = ({ theme }: StyleProps): Style => {
   return {
     header: {
       alignContent: 'center',
+      backgroundColor: theme.color.dark,
       display: 'flex',
-      padding: `${theme.spacing.normal} ${theme.spacing.xlarge}`,
       justifyContent: 'space-between',
+      width: '100%',
+      zIndex: 100,
     },
     link: {
       color: theme.color.textOnPrimary,
@@ -33,6 +35,7 @@ const makeStyles = ({ theme }: StyleProps): Style => {
     title: {
       display: 'flex',
       justifyContent: 'flex-start',
+      padding: `${theme.spacing.normal} ${theme.spacing.xlarge}`,
     },
   }
 }

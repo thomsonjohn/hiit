@@ -1,6 +1,6 @@
 import { IStyle } from 'fela'
 
-import { Theme, theme } from '../../Theme'
+import { Theme } from '../../Theme'
 
 interface Style {
   content: IStyle

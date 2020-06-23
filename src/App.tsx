@@ -20,10 +20,12 @@ const App = (): JSX.Element => {
     <GlobalProvider>
       <div className={css(styles.app)}>
         <Header />
-        <Router>
-          <Landing path="/" />
-          <Moves path="moves" />
-        </Router>
+        <div className={css(styles.main)}>
+          <Router>
+            <Landing path="/" />
+            <Moves path="moves" />
+          </Router>
+        </div>
       </div>
     </GlobalProvider>
   )
