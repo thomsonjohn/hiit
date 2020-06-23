@@ -1,4 +1,4 @@
-const exercises = [
+const moves = [
   {
     name: 'Abs bike',
     muscles: {
@@ -712,4 +712,4 @@ const exercises = [
   },
 ]
 
-export default exercises
+export default moves
