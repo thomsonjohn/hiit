@@ -16,7 +16,7 @@ const makeStyles = ({ theme }: StyleProps): Style => {
   return {
     header: {
       alignContent: 'center',
-      backgroundColor: theme.color.dark,
+      backgroundColor: theme.color.primary,
       display: 'flex',
       justifyContent: 'space-between',
       width: '100%',
@@ -24,8 +24,8 @@ const makeStyles = ({ theme }: StyleProps): Style => {
     },
     link: {
       color: theme.color.textOnPrimary,
-      textDecoration: 'none',
       cursor: 'pointer',
+      textDecoration: 'none',
       ...theme.font.logo,
       ':hover': {
         color: theme.color.secondary,

@@ -1,10 +1,8 @@
-import { IStyle } from 'fela'
-
 import { Theme } from './Theme'
 
 interface Style {
   app: object
-  main: IStyle
+  main: object
 }
 
 interface StyleProps {
@@ -25,6 +23,10 @@ const makeStyles = ({ theme }: StyleProps): Style => {
     },
     main: {
       overflow: 'scroll',
+      '> div': {
+        display: 'flex',
+        flex: '1 1 auto',
+      },
     },
   }
 }

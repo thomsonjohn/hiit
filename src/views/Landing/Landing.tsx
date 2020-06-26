@@ -21,7 +21,7 @@ const Landing: FC<Props> = () => {
       <h1 className={css(styles.text)}>
         Start your next <span>HIIT</span> workout<span>.</span>
       </h1>
-      <Button text="Let's go" />
+      <Button path="create" text="Let's go" />
     </div>
   )
 }

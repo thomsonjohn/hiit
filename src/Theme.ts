@@ -53,9 +53,9 @@ export interface Theme {
 export const theme: Theme = {
   color: {
     dark: '#282c34',
-    primary: '#263238',
-    primaryLight: '#4f5b62',
-    primaryDark: '#000a12',
+    primary: '#282c34',
+    primaryLight: '#50555e',
+    primaryDark: '#00000d',
     secondary: '#ffca28',
     secondaryLight: '#fffd61',
     secondaryDark: '#c79a00',
@@ -94,7 +94,7 @@ export const theme: Theme = {
     },
     headline3: {
       fontFamily: 'Roboto, sans-serif',
-      fontWeight: 400,
+      fontWeight: 700,
       fontSize: '3rem',
       letterSpacing: '0rem',
     },
@@ -107,7 +107,7 @@ export const theme: Theme = {
     },
     headline5: {
       fontFamily: 'Roboto, sans-serif',
-      fontWeight: 400,
+      fontWeight: 700,
       fontSize: '1.5rem',
       letterSpacing: '0rem',
     },
@@ -120,7 +120,7 @@ export const theme: Theme = {
     subtitle1: {
       fontFamily: 'Roboto, sans-serif',
       fontWeight: 400,
-      fontSize: '1rem',
+      fontSize: '1.25rem',
       letterSpacing: '-0.009rem',
       lineHeight: '1.5rem',
     },

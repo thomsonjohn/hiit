@@ -1,5 +1,3 @@
-import { IStyle } from 'fela'
-
 import { Theme } from '../../Theme'
 
 interface Style {
@@ -94,9 +92,10 @@ const getPosition = (muscle: string): {} => {
   }
 }
 
-const makeStyles = ({ theme, primary, secondary }: StyleProps): Style => {
+const makeStyles = ({ primary, theme }: StyleProps): Style => {
   return {
     muscleGroup: {
+      backgroundColor: theme.color.primary,
       border: '1px solid #b9b9b9',
       overflow: 'hidden',
       borderRadius: '50%',

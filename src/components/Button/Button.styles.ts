@@ -6,23 +6,26 @@ interface Style {
 
 interface StyleProps {
   theme: Theme
+  disabled?: boolean
 }
 
-const makeStyles = ({ theme }: StyleProps): Style => {
+const makeStyles = ({ theme, disabled }: StyleProps): Style => {
   return {
     button: {
-      background: theme.color.secondary,
-      color: theme.color.textOnSecondary,
-      width: '300px',
-      padding: theme.spacing.normal,
+      background: disabled ? theme.color.surfaceDark : theme.color.secondary,
       border: 'none',
       borderRadius: '25px',
-      cursor: 'pointer',
+      color: theme.color.textOnSecondary,
+      cursor: disabled ? 'normal' : 'pointer',
       marginTop: theme.spacing.normal,
       outline: 'none',
+      padding: theme.spacing.normal,
+      textAlign: 'center',
+      textDecoration: 'none',
+      width: '300px',
       ...theme.font.button,
       ':hover': {
-        background: theme.color.secondaryLight,
+        background: !disabled ? theme.color.secondaryLight : null,
       },
       transition: 'background ease-in 0.2s',
     },
