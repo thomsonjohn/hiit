@@ -3,6 +3,7 @@ import { useFela } from 'react-fela'
 import moment from 'moment'
 
 import CTA from '../../../../components/Button/CTA'
+import createWorkout from '../../../../utils/createWorkout'
 import { GlobalContext } from '../../../../context/GlobalState'
 import { Theme } from '../../../../Theme'
 
@@ -11,7 +12,7 @@ import MuscleGroups from './MuscleGroups'
 import makeStyles from './WorkoutPlan.styles'
 
 const WorkoutPlan = (): JSX.Element => {
-  const { options } = useContext(GlobalContext)
+  const { options, groups, addWorkoutToState } = useContext(GlobalContext)
 
   const { css, theme } = useFela<Theme>()
   const styles = makeStyles({
@@ -28,6 +29,10 @@ const WorkoutPlan = (): JSX.Element => {
     options.rounds * (options.rest + options.moves * (options.work + 10))
 
   const formattedDuration = moment.duration(duration, 'seconds').humanize()
+
+  const filteredGroups = groups.filter((group: { selected: boolean }) => {
+    return group.selected === true
+  })
 
   return (
     <div className={css(styles.wrapper)}>
@@ -47,7 +52,13 @@ const WorkoutPlan = (): JSX.Element => {
         <h2 className={css(styles.duration)}>
           Workout duration: {allValid ? formattedDuration : ''}
         </h2>
-        <CTA text="Submit" disabled={!allValid} />
+        <CTA
+          text="Submit"
+          disabled={!allValid}
+          onClick={(): void =>
+            addWorkoutToState(createWorkout(filteredGroups, options, duration))
+          }
+        />
       </div>
     </div>
   )

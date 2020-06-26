@@ -15,6 +15,13 @@ const initialState = {
     work: 0,
     rest: 0,
   },
+  workout: {
+    work: 0,
+    rest: 0,
+    rounds: 0,
+    moves: [],
+    duration: 0,
+  },
 }
 
 export const GlobalContext = createContext()
@@ -35,14 +42,23 @@ export const GlobalProvider = ({ children }) => {
     })
   }
 
+  function addWorkoutToState(workout) {
+    dispatch({
+      type: 'ADD_WORKOUT_TO_STATE',
+      payload: { workout },
+    })
+  }
+
   return (
     <GlobalContext.Provider
       value={{
         moves: state.moves,
         groups: state.groups,
         options: state.options,
+        workout: state.workout,
         editGroup,
         editOptions,
+        addWorkoutToState,
       }}
     >
       {children}

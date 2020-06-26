@@ -29,6 +29,14 @@ export default (state, action) => {
         },
       }
 
+    case 'ADD_WORKOUT_TO_STATE':
+      const workout = action.payload.workout
+
+      return {
+        ...state,
+        workout,
+      }
+
     default:
       return state
   }
